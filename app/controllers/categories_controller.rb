@@ -19,12 +19,16 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @task = TaskDetail.new
+    if @task.save
+      redirect_to root_path
+    end
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:task_type)
+    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :question, :response, :due_date, :category_id])
   end
 
 end

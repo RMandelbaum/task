@@ -1,0 +1,22 @@
+<div class="container">
+  <%=form_for task, url: task_index_path do |f| %>
+    <div class = "field">
+        <%= f.label "Name" %>
+        <br>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class = "field">
+        <%= render partial: "task_details/#{category.task_type}/questions", locals: {f:f} %>
+    </div>
+
+    <div class = "field">
+        <%= f.label "Due Date"%>
+        <br>
+        <%= f.text_field :due_date, placeholder: "dd/mm/yyyy"  %>
+    </div>
+
+
+    <div class = "field">
+        <%= f.submit %>
+      <% end %>

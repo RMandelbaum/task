@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :task_details, as: :task
   # resources :responses
   # resources :questions
   # resources :tasks
 
   resources :categories
+  resources :task_details, as: :task
 
 
   root "categories#index"

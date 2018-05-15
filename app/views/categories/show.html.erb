@@ -1,1 +1,6 @@
-<%= @category.task_type %>
+<h3>We Got You Covered in the <%= @category.task_type %> Department</h3>
+
+<h1>Describe Your Task</h1>
+<h2>We need these inputs to show only qualified and available Taskers for the job.</h2>
+
+<%= render partial: "task_details/form", locals: { category: @category, task: @task}  %>
