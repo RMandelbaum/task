@@ -7,7 +7,7 @@
 </div>
 
 <%@categories.each do |c| %>
-<button><%= c.task_type%></button>
+<button><%= link_to c.task_type, category_path(c.id)%></button>
 <% end %>
 
 <h5><%= link_to "New Category", new_category_path%></h5>
