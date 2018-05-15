@@ -1,16 +1,13 @@
 <div class = "field">
     <%= f.label "Vehicle Size" %>
     <br>
-    <%= f.text_area :response %>
+    <%= f.select :response, [['car', "car"], ['bike', "bike"], ['truck', "truck"]] %>
+    <br>
     <%= f.label "Address" %>
     <br>
     <%= f.text_area :response %>
-    <%= f.label "Expected Expenses" %>
     <br>
-    <%= f.text_area :response %>
-</div>
-<div class = "field">
-    <%= f.label "Receipt" %>
+    <%= f.label "Receipt Needed?" %>
     <br>
-    <%= f.text_field :response %>
+    <%= f.select :response, [['Yes', true], ['No', false]] %>
 </div>
