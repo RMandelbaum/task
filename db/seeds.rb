@@ -13,7 +13,8 @@
   {task_type: "Other"}
   ])
 
-
-@tasks = TaskDetail.create([
-  {response: "BC", due_date: "1/18/1991", category_id: 1}
-])
+@user = User.create([
+  {username: "Rachel",
+  email: "Rachel@gmail.com",
+  password: "Password"}
+  ])

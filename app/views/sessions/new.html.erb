@@ -1,0 +1,20 @@
+<div class="user">
+  <h1>Log In</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+      <%= render partial: '/sessions/error', locals: {current_user: @user} %>
+      <br>
+
+      <%= f.label :username %><br>
+      <%= f.text_field :username %><br>
+
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
+
+
+      <%= f.submit "Sign In" %>
+      <% end %>
+  </div>
+
+
+<!-- Eventually make this accessible through jquery/react -->

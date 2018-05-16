@@ -6,7 +6,7 @@ class TaskDetailsController < ApplicationController
   end
 
   def create
-    @task = TaskDetail.new(response: params[:task_detail][:response], due_date: params[:task_detail][:due_date], category_id: params[:category_id])
+    @task = TaskDetail.new(response: params[:task_detail][:response], due_date: params[:task_detail][:due_date], category_id: params[:category_id], user_id: session[:user_id])
     if @task.save
       @category = Category.find(params[:category_id])
       redirect_to category_task_index_path

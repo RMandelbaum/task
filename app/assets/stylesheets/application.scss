@@ -55,12 +55,35 @@
  	font-weight: 100;
  }
 .banner{
-  text-align: center;
-  padding-bottom: 120px;
+  padding-bottom: 30px;
+  border-bottom:22px;
+  border-bottom-style: solid;
+  border-bottom-color: #438E29;
   width:100%;
-  background-image: url("https://assets.taskrabbit.com/v3/assets/web/icons/mobile-icon-144x144-901ec3f506d0c7cc3f87e12b6fd61cb8.png");
-
+  height: 13%;
+  background-image: url("https://assets.taskrabbit.com/v3/assets/web/icons/mobile-icon-57x57-ece974cd9b9552b62219337d5767cf6c.png");
+  background-repeat: no-repeat;
 }
+  nav {
+  text-align: right;
+  margin: 20px 0 0 ;
+  padding: 10px 0;
+
+  }
+
+
+
+  nav a {
+    font-weight: normal;
+    padding: 10px 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline;
+    margin-right: 1em;
+  }
+
+
  .container {
  	width: 50%;
  	max-width: 750px;
@@ -74,28 +97,34 @@
  }
 
  .category-image {
+   border-top: .5px;
+   border-top-style: solid;
    background-image: url("https://blogdottaskrabbitdotcom.files.wordpress.com/2016/03/facebook_1200_2.jpeg?w=1620");
 
    background-repeat: no-repeat;
-   height: 65%;
-   
+   height: 70%;
  }
 
  .category-title{
- 	text-align: left;
+   border-top: .5px;
+   border-top-style: solid;
+ 	text-align: center;
  	font-weight: 700;
  	font-size: 1.5rem;
   line-height: 1.0;
-  display: block;
+  display:inline-flex;
  	text-transform: uppercase;
   padding: 40px;
 
 
  	a {
  		text-decoration: none;
- 		color: black;
+    display: inline;
+  margin-right: 1em;
+
+
  		&:hover {
-      font-size: 2.2rem;
+      font-size: 1.6rem;
 
  		}
  	}

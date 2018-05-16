@@ -1,3 +1,4 @@
+<% @current_user = current_user %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +10,12 @@
   </head>
 
   <body>
+
+    <div class="banner">
+      <nav>
+        <%= render partial: "layouts/links", locals: {current_user: @current_user} %>
+    </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

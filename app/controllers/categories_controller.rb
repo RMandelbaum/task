@@ -30,8 +30,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    byebug
-    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :question, :response, :due_date, :category_id])
+    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :question, :response, :due_date, :category_id, :user_id])
   end
 
 

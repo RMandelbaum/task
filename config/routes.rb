@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # resources :responses
-  # resources :questions
-  # resources :tasks
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  resources :users
 
   resources :categories do
     resources :task_details, as: :task
