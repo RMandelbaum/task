@@ -1,16 +1,9 @@
 <div class = "field">
-    <%= f.label "Store Name" %>
+    <%= f.label "Number of People Required" %>
     <br>
-    <%= f.text_area :response %>
-    <%= f.label "List" %>
+    <%= f.number_field :response, multiple:true %>
     <br>
-    <%= f.text_area :response %>
-    <%= f.label "Expected Expenses" %>
+    <%= f.label "Address" %>
     <br>
-    <%= f.text_area :response %>
-</div>
-<div class = "field">
-    <%= f.label "response" %>
-    <br>
-    <%= f.text_area :response %>
-</div>
+    <%= f.text_area :response, multiple:true %>
+  </div>

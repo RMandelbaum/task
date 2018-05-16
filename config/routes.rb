@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # resources :questions
   # resources :tasks
 
-  resources :categories
-  resources :task_details, as: :task
-
+  resources :categories do
+    resources :task_details, as: :task
+end
 
   root "categories#index"
 

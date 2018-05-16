@@ -15,5 +15,5 @@
 
 
 @tasks = TaskDetail.create([
-  {name: "Shopping", question:"Why?", response: "BC", due_date: "1/18/1991", category_id: 1}
+  {response: "BC", due_date: "1/18/1991", category_id: 1}
 ])

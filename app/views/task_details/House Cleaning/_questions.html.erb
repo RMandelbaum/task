@@ -1,17 +1,13 @@
 <div class = "field">
-    <%= f.label "Store Name" %>
-    <%= f.text_field :response %>
+    <%= f.label "Address" %>
     <br>
-    <%= f.label "List" %>
-    <%= f.text_area :response %>
+    <%= f.text_field :response, multiple:true %>
     <br>
-    <%= f.text_area :response %>
-    <%= f.label "Expected Expenses" %>
+    <%= f.label "Number of Bathrooms" %>
     <br>
-    <%= f.text_area :response %>
-</div>
-<div class = "field">
-    <%= f.label "response" %>
+    <%= f.number_field :response, multiple:true %>
     <br>
-    <%= f.text_area :response %>
+    <%= f.label "Type of Cleaning " %>
+    <br>
+    <%= f.select :response, [['Light', "light"], ['Normal', "normal"], ['Heavy', "heavy"]] %>
 </div>

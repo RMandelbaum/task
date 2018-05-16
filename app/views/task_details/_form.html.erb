@@ -1,8 +1,8 @@
-<div class="container">
-  <%=form_for task, url: task_index_path do |f| %>
-
+<div class="container" id="task_details_wrapper">
+  <%=form_for task, url: category_task_index_path(category)  do |f| %>
+<!--  -->
     <div class = "field">
-        <%= render partial: "task_details/#{category.task_type}/questions", locals: {f:f} %>
+        <%= render partial: "task_details/#{category.task_type}/questions", locals: {f: f, :name => category.task_type, :id => category.id} %>
     </div>
 
     <div class = "field">
@@ -13,7 +13,7 @@
 
 
     <div class = "field">
-        <%= f.submit %>
+        <%= f.submit "Submit Task"%>
     </div>
       <% end %>
 </div>

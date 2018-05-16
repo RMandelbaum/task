@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20180515134445) do
   end
 
   create_table "task_details", force: :cascade do |t|
-    t.string "name"
-    t.string "question"
     t.string "response"
     t.date "due_date"
     t.integer "category_id"
