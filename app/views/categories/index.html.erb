@@ -1,13 +1,19 @@
-<div class = "category_sub_title">
+<div class="banner">
+</div>
+<div class = "title">
   <h1>The convenient & fast way to get things done around the house </h1>
   <h3>Choose from over 60,000 carefully vetted and feedback rated Taskers to get quick help</h3>
 </div>
 
-<div class="category_title">
+<div class="category-image">
+
+</div>
+<div class="category-title">
   <%@categories.each do |c| %>
   <label><%= link_to c.task_type, category_path(c.id)%></label>
   <br>
   <% end %>
+  <br>
+  <br>
+  <%= link_to "New Category", new_category_path%>
 </div>
-
-<div class="category_title"><%= link_to "New Category", new_category_path%></div>
