@@ -23,4 +23,7 @@ class TaskDetailsController < ApplicationController
 
     @task = TaskDetail.find(params[:id])
   end
+
+  def task_stats
+  end
 end

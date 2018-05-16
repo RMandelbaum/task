@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  get '/task_stats' => 'task_details#task_stats'
+
   resources :users
+  resources :user, :user_agent => /iPhone/, :format => :iphone
 
   resources :categories do
     resources :task_details, as: :task

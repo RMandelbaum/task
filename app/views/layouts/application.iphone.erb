@@ -1,0 +1,24 @@
+<% @current_user = current_user %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task</title>
+    <meta id="viewport" name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="banner">
+      <nav>
+        <%= render partial: "layouts/links", locals: {current_user: @current_user} %>
+    </nav>
+    </div>
+    <%= yield %>
+  </body>
+</html>

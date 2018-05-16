@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
+  before_action :check_for_mobile, :only => [:new, :edit]
 
+  # Always render mobile versions for these, regardless of User-Agent.
+  before_action :prepare_for_mobile, :only => :show
   def index
     @categories = Category.all
   end

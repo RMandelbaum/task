@@ -1,7 +1,9 @@
 <div class = "field">
+  <center><h3><%=name %></h3></center>
+
     <%= f.label "Vehicle Size" %>
     <br>
-    <%= f.select :response,  [['car', "car"], ['bike', "bike"], ['truck', "truck"]], multiple:true %>
+    <%= f.select :response, [['car', "car"], ['bike', "bike"], ['truck', "truck"]], multiple:true %>
     <br>
     <%= f.label "Address" %>
     <br>
