@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token
+
   before_action :check_for_mobile
   helper_method :current_user, :logged_in?, :mobile_device?
 

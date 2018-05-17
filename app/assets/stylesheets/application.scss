@@ -101,7 +101,6 @@
    border-top: .5px;
    border-top-style: solid;
    background-image: url("https://blogdottaskrabbitdotcom.files.wordpress.com/2016/03/facebook_1200_2.jpeg?w=1620");
-
    background-repeat: no-repeat;
    height: 70%;
  }
@@ -109,19 +108,19 @@
  .category-title{
    border-top: .5px;
    border-top-style: solid;
- 	text-align: center;
- 	font-weight: 700;
- 	font-size: 1.3rem;
-  line-height: 1.0;
-  display:inline-flex;
- 	text-transform: uppercase;
-  padding: 40px;
+   text-align: center;
+ 	 font-weight: 700;
+ 	 font-size: 1.3rem;
+   line-height: 1.0;
+   display:inline-flex;
+ 	 text-transform: uppercase;
+   padding: 40px;
 
 
  	a {
  		text-decoration: none;
     display: inline;
-  margin-right: 1em;
+    margin-right: 4em;
 
 
  		&:hover {
@@ -191,6 +190,24 @@
  		background: $dark;
  		color: $white_opaque;
  	}
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.table{
+  padding:10px;
+
 }
 
  ::-webkit-input-placeholder { color: $dark; }

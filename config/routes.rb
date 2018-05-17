@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/task_stats' => 'task_details#task_stats'
 
+
   resources :users
   resources :user, :user_agent => /iPhone/, :format => :iphone
 

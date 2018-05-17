@@ -24,6 +24,10 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @tasks = TaskDetail.where(category_id: @category.id)
     @task = TaskDetail.new
+
+    @vehicle = [['Car', "car"], ['Bike', "bike"], ['Truck', "truck"]]
+
+
     # if @task.save
     #   redirect_to root_path
     # end
@@ -33,7 +37,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :question, :response, :due_date, :category_id, :user_id])
+    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :response, :due_date, :category_id, :user_id])
   end
 
 

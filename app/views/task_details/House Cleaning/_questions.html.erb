@@ -9,7 +9,8 @@
     <br>
     <%= f.number_field :response, multiple:true %>
     <br>
+    <br>
     <%= f.label "Type of Cleaning " %>
     <br>
-    <%= f.select :response, [['Light', "light"], ['Normal', "normal"], ['Heavy', "heavy"]] %>
+    <%= f.select :response, [['Light', "light"], ['Normal', "normal"], ['Heavy', "heavy"]], multiple: true %>
 </div>

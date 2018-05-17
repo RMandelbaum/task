@@ -1,0 +1,21 @@
+Things to work on:
+
+validation--if page doesnt exist, redirect_to '/'
+ios format --not ideal, research more
+
+serialization -- make api
+
+add jquery to login on the same page, smaller div pops up, rest of screen fades
+
+new category, works but different color?
+
+display tasks on users pages
+
+data...got to make the responses work/Statistics figure out how to store questions
+data..forms are broken with select fields
+models write methods to query and calculate and display responses 
+
+refactor css, clean up code!!
+
+implement responsive web pages to fit all screens
+hamburger drop down menu for smaller ones

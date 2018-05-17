@@ -3,7 +3,9 @@
 
     <%= f.label "Vehicle Size" %>
     <br>
-    <%= f.select :response, [['car', "car"], ['bike', "bike"], ['truck', "truck"]], multiple:true %>
+    <%= f.select :response, @vehicle, {multiple: true} %>
+
+    <br>
     <br>
     <%= f.label "Address" %>
     <br>
@@ -11,5 +13,5 @@
     <br>
     <%= f.label "Receipt Needed?" %>
     <br>
-    <%= f.select :response, [['Yes', true], ['No', false]], multiple: true %>
+    <%= f.select :response, [['Yes', true], ['No', false]], {multiple: true} %>
 </div>
