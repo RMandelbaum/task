@@ -1,12 +1,16 @@
-    <center><h3><%=name %></h3></center>
-    <%= f.label "Store Name" %>
-    <br>
-    <%= f.text_field :response, multiple: true %>
-    <br>
-    <%= f.label "List", as: :question, multiple: true %>
-    <br>
-    <%= f.text_area :response, multiple: true %>
-    <br>
-    <%= f.label "Expected Expenses ($)", as: :question, multiple: true  %>
-    <br>
-    <%= f.number_field :response, multiple: true %>
+<div class = "field">
+  <div class="title">
+    <h2><%= name %></h2>
+  </div>
+  <%= f.label "Store Name" %>
+  <br>
+  <%= f.text_field :response, multiple: true %>
+  <br>
+  <%= f.label "List", as: :question, multiple: true %>
+  <br>
+  <%= f.text_area :response, multiple: true %>
+  <br>
+  <%= f.label "Expected Expenses ($)", as: :question, multiple: true  %>
+  <br>
+  <%= f.number_field :response, multiple: true %>}
+</div>

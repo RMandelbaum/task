@@ -29,6 +29,8 @@ end
 
     @task = TaskDetail.find(params[:id])
 
+      #serialized api json 
+      #render json: @task
   end
 
   def task_stats
