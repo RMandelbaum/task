@@ -28,9 +28,9 @@ end
   def task_stats
     TaskDetail.get_task_details
     @shopping = TaskDetail.calculate_highest_expense_for_shopping
-    @donation = TaskDetail.get_donation_responses
+    @donation = TaskDetail.calculate_most_used_vehicle
     @moving = TaskDetail.get_moving_responses
-    @cleaning = TaskDetail.get_house_cleaning_responses
+    @cleaning = TaskDetail.calculate_most_bathroom_cleaned
     @other = TaskDetail.get_other
     @due_date = TaskDetail.get_due_date
   end

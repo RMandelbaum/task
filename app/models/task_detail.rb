@@ -48,7 +48,8 @@ class TaskDetail < ApplicationRecord
       response = donate.response
       vehicle_size << response[0]
       address << response[1]
-      receipt << response[2]
+      r = response[2].to_s == 'true' ? true : false
+      receipt << r
     end
     @donation_hash["vehicle_size"] = vehicle_size
     @donation_hash["address"] = address
@@ -98,7 +99,6 @@ class TaskDetail < ApplicationRecord
       response = o.response
       title << response[0]
       description << response[1]
-      byebug
     end
     @other_hash["title"] = title
     @other_hash["description"] = description
@@ -123,6 +123,16 @@ class TaskDetail < ApplicationRecord
     prices = shopping["expected_price"]
     prices.sort
     prices.last
+  end
+
+  def self.calculate_most_used_vehicle
+    vehicle = TaskDetail.get_donation_responses
+    vehicle["vehicle_size"].group_by{|a| a }.sort_by{|a,b| b.size<=>a.size}.first[0]
+  end
+
+  def self.calculate_most_bathroom_cleaned
+    bathroom = TaskDetail.get_house_cleaning_responses
+    bathroom["num_bathroom"].group_by{|a| a }.sort_by{|a,b| b.size<=>a.size}.first[0]
   end
 
 end
