@@ -3,7 +3,7 @@ class TaskDetail < ApplicationRecord
   belongs_to :user
   has_many :responses
   accepts_nested_attributes_for :responses
-  #validates :responses, presence: true
+  validates :response, presence: true
 
 #Categories are hard coded because I entered in seed data @
 #Would use sql to query for matching category_id with category.id
@@ -122,7 +122,7 @@ class TaskDetail < ApplicationRecord
     shopping = TaskDetail.get_shopping_responses
     prices = shopping["expected_price"]
     prices.sort
-    prices[0]
+    prices.last
   end
 
 end

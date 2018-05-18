@@ -1,28 +1,25 @@
 class TaskDetailsController < ApplicationController
 
+  def home
+    @tasks = TaskDetail.where(category_id: params[:category_id])
+  end
+
   def new
-
     @task = TaskDetail.new
-
   end
 
   def create
-
-    @task = TaskDetail.new(response: params[:task_detail][:response], due_date: params[:task_detail][:due_date], category_id: params[:category_id], user_id: session[:user_id])
-    
-    if @task.save
-      @category = Category.find(params[:category_id])
-      redirect_to category_task_index_path
-  else
     @category = Category.find(params[:category_id])
+    @task = TaskDetail.new(response: params[:task_detail][:response], due_date: params[:task_detail][:due_date], category_id: params[:category_id], user_id: session[:user_id])
+
+    if @task.save
+      render "task_details/home"
+  else
     redirect_to category_path(@category.id)
   end
 end
 
-  def index
-    @tasks = TaskDetail.where(category_id: params[:category_id])
-    @category = Category.find(params[:category_id])
-  end
+
 
   def show
     @task = TaskDetail.find(params[:id])

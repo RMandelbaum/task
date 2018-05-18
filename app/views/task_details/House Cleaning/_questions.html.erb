@@ -13,5 +13,8 @@
   <br>
   <%= f.label "Type of Cleaning " %>
   <br>
-  <%= f.select :response, [['Light', "light"], ['Normal', "normal"], ['Heavy', "heavy"]], multiple: true %>
+  <% @cleaning_type.each do |v| %>
+    <%= f.check_box :response, {multiple: true}, v, false %>
+    <%= f.label v %>
+  <% end %>
 </div>

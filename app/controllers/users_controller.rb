@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  #set to a future admin setting, only admin can view this page to see all the users
+  def index 
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end

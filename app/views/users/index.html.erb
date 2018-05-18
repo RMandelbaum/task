@@ -1,14 +1,16 @@
-<div class="container">
+<center>
   <table>
     <% @users.each do |user| %>
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th>User Id</th>
     </tr>
     <tr>
       <td><%= user.username %></td>
       <td><%= user.email %></td>
+      <td><%= user.id %></td>
     </tr>
     <% end %>
   </table>
-</div>
+</center>

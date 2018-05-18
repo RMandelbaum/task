@@ -32,15 +32,16 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @tasks = TaskDetail.where(category_id: @category.id)
     @task = TaskDetail.new
-    @vehicle = [['Car', "car"], ['Bike', "bike"], ['Truck', "truck"]]
+    @vehicle = ['Car', 'Bike', 'Truck']
+    @cleaning_type = ['Light', 'Normal', 'Heavy']
     render "categories/show"
-    
+
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:task_type, :task_details_attributes => [:name, :response, :due_date, :category_id, :user_id])
+    params.require(:category).permit(:task_type, :task_details_attributes => [:response, :due_date, :category_id, :user_id])
   end
 
 
