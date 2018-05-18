@@ -5,11 +5,13 @@
       <th>Name</th>
       <th>Email</th>
       <th>User Id</th>
+      <th>Tasks</th>
     </tr>
     <tr>
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td><%= user.id %></td>
+      <td> <%= @tasks_responses %> </td>
     </tr>
     <% end %>
   </table>

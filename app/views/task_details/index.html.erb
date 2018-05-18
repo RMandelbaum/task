@@ -1,0 +1,31 @@
+
+<table class = "responses">
+  <tr>
+    <th>Store Name<th>
+    <th>Item Lists<th>
+    <th>Expected Price<th>
+    <th>Due Date</th>
+    <th>User Id</th>
+  </tr>
+  <tr>
+    <td><%= @shopping["store_name"] %></td>
+    <td><%= @shopping["item_lists"] %></td>
+    <td><%= @shopping["expected_price"] %></td>
+  </tr>
+</table>
+
+<% @donation.each do |r| %>
+<%= r %>
+<% end %>
+<% @moving.each do |r| %>
+<%= r %>
+<% end %>
+<% @cleaning.each do |r| %>
+<%= r %>
+<% end %>
+<% @other.each do |r| %>
+<%= r %>
+<% end %>
+<% @due_date.each do |r| %>
+<%= r %>
+<% end %>

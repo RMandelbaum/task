@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  #Resource for possible statistics
+  #Resource for possible statistics, tasks responses
   get '/tasks/statistics' => 'task_details#task_stats'
+  get '/tasks/home' => 'task_details#home'
+  get '/tasks/responses' => 'task_details#index'
 
   #resource for users to sign up and view show page/allows for future iOS compatability
   resources :users, only: [:index, :new, :create, :show]
@@ -16,7 +18,6 @@ Rails.application.routes.draw do
     resources :task_details, as: :task
   end
 
-  get '/tasks/home' => 'task_details#home'
 
   root "categories#index"
 

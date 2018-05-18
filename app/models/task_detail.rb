@@ -1,9 +1,8 @@
 class TaskDetail < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  has_many :responses
-  accepts_nested_attributes_for :responses
   validates :response, presence: true
+  validates :due_date, presence: true
 
 #Categories are hard coded because I entered in seed data @
 #Would use sql to query for matching category_id with category.id
