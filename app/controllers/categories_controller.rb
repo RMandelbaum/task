@@ -1,12 +1,19 @@
 class CategoriesController < ApplicationController
   before_action :check_for_mobile, :only => [:new, :edit]
-
-  # Always render mobile versions for these, regardless of User-Agent.
   before_action :prepare_for_mobile, :only => :show
+  before_action :require_login, only: [:new, :create, :show]
+
+
+  #Main page, can view in JSON (for future API calls) or HTML
   def index
     @categories = Category.all
+    respond_to do |format|
+      format.json { render json: @categories }
+      format.html { render "categories/index"}
+    end
   end
 
+  #Allows for future categories to be created
   def new
     @category = Category.new
   end
@@ -20,18 +27,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  #Category show page has nested form so the form can happen in one page, rather than two
   def show
     @category = Category.find(params[:id])
     @tasks = TaskDetail.where(category_id: @category.id)
     @task = TaskDetail.new
-
     @vehicle = [['Car', "car"], ['Bike', "bike"], ['Truck', "truck"]]
-
-
-    # if @task.save
-    #   redirect_to root_path
-    # end
     render "categories/show"
+    
   end
 
   private

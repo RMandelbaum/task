@@ -1,20 +1,12 @@
-<div class="container" id="task_details_wrapper">
-  <%=form_for task, url: category_task_index_path(category)  do |f| %>
-<!--  -->
-    <div class = "field">
-        <%= render partial: "task_details/#{category.task_type}/questions", locals: {f: f, :name => category.task_type, :id => category.id} %>
-    </div>
-
-    <div class = "field">
-      <br>
-        <%= f.label "Due Date"%>
-        <br>
-        <%= f.date_field :due_date, placeholder: "dd/mm/yyyy"  %>
-    </div>
-
-
-    <div class = "field">
-        <%= f.submit "Submit Task"%>
-    </div>
-      <% end %>
+<div class="container" >
+  <%= form_for task, url: category_task_index_path(category) do |f| %>
+    <%= render partial: "task_details/#{category.task_type}/questions", locals: {f: f, :name => category.task_type, :id => category.id} %>
+    <br>
+    <%= f.label "Due Date" %>
+    <br>
+    <%= f.date_field :due_date, placeholder: "dd/mm/yyyy"  %>
+    <br>
+    <br>
+    <%= f.submit "Submit Task"%>
+  <% end %>
 </div>

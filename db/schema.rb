@@ -21,23 +21,15 @@ ActiveRecord::Schema.define(version: 20180516123129) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "content"
-    t.integer "task_detail_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "responses", force: :cascade do |t|
     t.string "content"
-    t.integer "question_id"
+    t.integer "task_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "task_details", force: :cascade do |t|
-    t.string "response"
+    t.string "response", array: true
     t.date "due_date"
     t.integer "category_id"
     t.integer "user_id"

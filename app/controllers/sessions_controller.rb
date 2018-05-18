@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
-#skip_before_action :require_login, only: [:new, :create]
 
   def new
     @user = User.new
   end
 
+#Authenticates User/Logs user in
   def create
        @user = User.find_by(username: params[:session][:username])
        if @user && @user.authenticate(params[:session][:password])
@@ -15,10 +15,13 @@ class SessionsController < ApplicationController
        end
    end
 
+#Logs user out
   def destroy
     session[:user_id] = nil
     redirect_to root_path
   end
+
+
 
 
 end
