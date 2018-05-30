@@ -4,7 +4,6 @@ class CategoriesController < ApplicationController
   before_action :require_login, only: [:new, :create, :show]
 
 
-  #Main page, can view in JSON (for future API calls) or HTML
   def index
     @categories = Category.all
     respond_to do |format|
